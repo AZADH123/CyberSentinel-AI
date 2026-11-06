@@ -1,0 +1,13 @@
+# Runtime and development dependency installation.
+# Runtime pins live in pyproject.toml; this file intentionally delegates to them.
+# Run from the backend/ directory:
+#   python -m pip install -r requirements.txt
+-e .
+pytest==8.3.4
+pytest-asyncio==0.25.0
+pytest-cov==6.0.0
+coverage[toml]==7.6.9
+hypothesis==6.122.3
+respx==0.22.0
+ruff==0.8.4
+mypy==1.14.0

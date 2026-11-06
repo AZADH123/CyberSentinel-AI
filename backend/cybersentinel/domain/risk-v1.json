@@ -1,0 +1,19 @@
+{
+  "version": "risk-v1",
+  "description": "Additive, capped, versioned risk weights. Absence contributes zero and is reported as a gap, never as points.",
+  "cap": 100,
+  "bands": {
+    "informational": [0, 24],
+    "low": [25, 49],
+    "medium": [50, 74],
+    "high": [75, 100]
+  },
+  "rules": {
+    "R-01": {"label": "Failure burst", "burst_5_9": 8, "burst_10_19": 14, "burst_20_plus": 20},
+    "R-02": {"label": "Success after burst", "success_3_4": 10, "success_5_plus": 20},
+    "R-03": {"label": "Privileged user or critical asset", "privileged": 8, "critical_asset": 8, "both": 15},
+    "R-04": {"label": "Unexpected privilege change", "explicit_grant": 20, "ambiguous_change": 12},
+    "R-05": {"label": "External reputation", "malicious": 15, "suspicious": 8},
+    "R-06": {"label": "Reliable unusual-context signal", "unusual_context": 10}
+  }
+}
